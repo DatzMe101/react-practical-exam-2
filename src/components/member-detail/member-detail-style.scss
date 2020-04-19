@@ -1,0 +1,12 @@
+.ui.cards > .member-detail {
+  &.active {
+    background-color: #4b882f;
+    color: #ffffff;
+    .content {
+      .header,
+      .meta {
+        color: #ffffff;
+      }
+    }
+  }
+}

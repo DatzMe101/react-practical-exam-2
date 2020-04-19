@@ -1,0 +1,9 @@
+.ui.cards > .post-details.ui.card {
+  width: 100%;
+  .extra {
+    display: flex;
+    .button {
+      width: 50%;
+    }
+  }
+}

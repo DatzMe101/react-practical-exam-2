@@ -1,0 +1,17 @@
+.no-post-available {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 2px dashed #b6b5bc;
+  .no-post-icon {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #b6b5bc;
+    .icon {
+      font-size: 10em;
+      color: #b6b5bc;
+    }
+  }
+}
