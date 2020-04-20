@@ -18,3 +18,11 @@ export const selectFetchingPostById = createSelector(
   [post],
   ({ fetchingSelectedPost }) => fetchingSelectedPost
 );
+export const selectPostRequestStatus = createSelector(
+  [post],
+  ({ requestStatus }) => requestStatus
+);
+export const selectDeletePostRequestStatus = createSelector(
+  [post],
+  ({ deleteRequestStatus }) => deleteRequestStatus
+);

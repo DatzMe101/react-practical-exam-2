@@ -1,0 +1,6 @@
+export const REQUEST_STATUS = {
+  NO_ACTION: 0,
+  PROCESSING: 1,
+  SUCCEED: 2,
+  FAILED: 3,
+};

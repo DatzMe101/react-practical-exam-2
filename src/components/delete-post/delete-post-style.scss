@@ -1,0 +1,9 @@
+.delete-post {
+  display: flex;
+  justify-content: center;
+  .post-item-container {
+    .ui.header {
+      text-align: center;
+    }
+  }
+}

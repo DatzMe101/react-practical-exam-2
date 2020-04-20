@@ -4,11 +4,11 @@ const CommentDetail = ({ comment }) => {
   const { name, image, body } = comment;
   return (
     <div className='comment'>
-      <a className='avatar'>
+      <span className='avatar'>
         <img src={image} alt='User Avatar' />
-      </a>
+      </span>
       <div className='content'>
-        <a className='author'>{name}</a>
+        <span className='author'>{name}</span>
         <div className='text'>{body}</div>
       </div>
     </div>

@@ -9,13 +9,20 @@ import {
 } from '../../redux/post/post-selector';
 import { fetchPostById } from '../../redux/post/post-actions';
 import { selectUsers } from '../../redux/user/user-selector';
-import './post-style.scss';
 import PostContainer from '../../components/PostContainer';
+import CreatePost from '../../components/CreatePost';
+import './post-style.scss';
 
 class Post extends Component {
   componentDidMount() {
     if (this.isCreateNewPost) return;
     this.props.fetchPostById(this.postId);
+  }
+  renderDetailView() {
+    if (this.isCreateNewPost) return <CreatePost />;
+    return this.props.selectedPost ? (
+      <PostContainer postId={this.postId} />
+    ) : null;
   }
   render() {
     this.postId = get(this, 'props.match.params.id', 0);
@@ -38,9 +45,7 @@ class Post extends Component {
               <div className='active section'>{title}</div>
             </div>
           </div>
-          {!this.isCreateNewPost && selectedPost && (
-            <PostContainer postId={this.postId} />
-          )}
+          {this.renderDetailView()}
         </div>
       </div>
     );

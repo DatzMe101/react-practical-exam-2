@@ -52,3 +52,56 @@ export const fetchPostById = (postId) => {
     }
   };
 };
+
+export const setPostStarted = () => ({
+  type: POST_TYPES.SET_POST_STARTED,
+});
+
+export const setPostSuccess = (data) => ({
+  type: POST_TYPES.SET_POST_SUCCESS,
+  payload: data,
+});
+
+export const setPostFailure = (error = {}) => ({
+  type: POST_TYPES.SET_POST_FAILURE,
+  payload: { error },
+});
+export const setPostReset = () => ({
+  type: POST_TYPES.SET_POST_RESET,
+});
+export const setPost = (post) => {
+  return async (dispatch) => {
+    dispatch(setPostStarted());
+    try {
+      const { data } = await postService.setPost(post);
+      dispatch(setPostSuccess(data));
+    } catch (error) {
+      dispatch(setPostFailure(error));
+    }
+  };
+};
+export const deletePostStarted = () => ({
+  type: POST_TYPES.DELETE_POST_STARTED,
+});
+export const deletePostSuccess = (data) => ({
+  type: POST_TYPES.DELETE_POST_SUCCESS,
+  payload: data,
+});
+export const deletePostFailure = (error = {}) => ({
+  type: POST_TYPES.DELETE_POST_FAILURE,
+  payload: { error },
+});
+export const deletePostReset = () => ({
+  type: POST_TYPES.DELETE_POST_RESET,
+});
+export const deletePost = (postId) => {
+  return async (dispatch) => {
+    dispatch(deletePostStarted());
+    try {
+      await postService.deletePost(postId);
+      dispatch(deletePostSuccess(postId));
+    } catch (error) {
+      dispatch(deletePostFailure(error));
+    }
+  };
+};
