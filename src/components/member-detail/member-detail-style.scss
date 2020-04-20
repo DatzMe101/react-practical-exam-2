@@ -8,5 +8,15 @@
         color: #ffffff;
       }
     }
+    .arrow-left {
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-right: 12px solid #4b882f;
+      position: absolute;
+      right: -28px;
+      top: 40%;
+    }
   }
 }

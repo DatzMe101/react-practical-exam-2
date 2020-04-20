@@ -31,6 +31,7 @@ const MemberDetail = ({
         />
         <div className='header'>{name}</div>
         <div className='meta'>{companyName}</div>
+        <div class='arrow-left'></div>
       </div>
     </div>
   );
