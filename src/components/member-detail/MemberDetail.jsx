@@ -22,7 +22,11 @@ const MemberDetail = ({
     onFetchPostsPerUser(id);
   };
   return (
-    <div className={cardClass} onClick={onSelectUserCard}>
+    <div
+      data-testid='member-detail'
+      className={cardClass}
+      onClick={onSelectUserCard}
+    >
       <div className='content'>
         <img
           className='right floated mini ui circular image'
@@ -31,7 +35,7 @@ const MemberDetail = ({
         />
         <div className='header'>{name}</div>
         <div className='meta'>{companyName}</div>
-        <div class='arrow-left'></div>
+        <div className='arrow-left'></div>
       </div>
     </div>
   );

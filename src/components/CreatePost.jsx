@@ -30,7 +30,7 @@ class CreatePost extends Component {
     }
     const isLoading = requestStatus === REQUEST_STATUS.PROCESSING;
     return (
-      <div className='sixteen wide column'>
+      <div data-testid='create-post' className='sixteen wide column'>
         <form
           onSubmit={handleSubmit((formValues) => this.onSubmit(formValues))}
           className='ui form error'

@@ -11,7 +11,11 @@ const MemberList = ({ users = [] }) => {
     }, []);
     return renderedUserList;
   };
-  return <div className='member-list ui cards'>{renderUsers()}</div>;
+  return (
+    <div data-testid='member-list' className='member-list ui cards'>
+      {renderUsers()}
+    </div>
+  );
 };
 
 const mapStateToProps = createStructuredSelector({

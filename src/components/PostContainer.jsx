@@ -15,7 +15,7 @@ const PostContainer = ({ isLoading, selectedPost, users, postId }) => {
   const currentUser = users.find((user) => user.id === selectedPost.userId);
   return (
     <Loader isLoading={isLoading} loaderText='Loading Post'>
-      <div className='eight wide column'>
+      <div data-testid='post-container' className='eight wide column'>
         {selectedPost && (
           <PostDetail post={selectedPost}>
             {currentUser && <PostAuthor user={currentUser} />}

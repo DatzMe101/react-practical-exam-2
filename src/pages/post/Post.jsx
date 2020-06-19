@@ -36,7 +36,7 @@ class Post extends Component {
         <div className='ui grid'>
           <div className='sixteen wide column'>
             <div className='ui big breadcrumb'>
-              <Link to='/' className='section'>
+              <Link data-testid='home-link' to='/' className='section'>
                 Home
               </Link>
               <i className='right chevron icon divider'></i>

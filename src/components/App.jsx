@@ -15,7 +15,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div data-testid='app'>
         <Switch>
           <Route exact path={PATH_NAME.HOME} component={Home} />
           <Route path={PATH_NAME.POST_WITH_ID} component={Post} />

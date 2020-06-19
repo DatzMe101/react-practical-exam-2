@@ -32,12 +32,16 @@ const PostList = ({
     return post;
   };
   return (
-    <div className='post-list'>
+    <div data-testid='post-list' className='post-list'>
       <h2 className='ui header'>
         <img className='ui avatar image' src={image} alt='Member Avatar' />
         {name} Posts
       </h2>
-      <Link to={`${PATH_NAME.POST}new`} className='ui green button btn-new'>
+      <Link
+        data-testid='new-post'
+        to={`${PATH_NAME.POST}new`}
+        className='ui green button btn-new'
+      >
         Create New Post
       </Link>
       <Loader isLoading={isLoadingPost} loaderText='Loading Posts'>

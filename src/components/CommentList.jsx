@@ -16,6 +16,9 @@ class CommentList extends Component {
   }
   renderComments() {
     const { comments = [] } = this.props;
+    if (!comments.length) {
+      return <div data-testid='no-comment'>No Comment Available</div>;
+    }
     const renderedComments = comments.reduce((accum, comment) => {
       return accum.concat(<CommentDetail key={comment.id} comment={comment} />);
     }, []);
@@ -24,7 +27,7 @@ class CommentList extends Component {
   render() {
     return (
       <Loader isLoading={this.props.isFetchingComments}>
-        <div className='ui comments'>
+        <div data-testid='comment-list' className='ui comments'>
           <h3 className='ui dividing header'>Comments</h3>
           {this.renderComments()}
         </div>
